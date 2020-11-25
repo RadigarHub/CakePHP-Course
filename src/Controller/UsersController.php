@@ -11,8 +11,8 @@ class UsersController extends AppController
 {
     public function index()
     {
-        echo "Listado de usuarios";
-        exit();
+        $users = $this->paginate($this->Users);
+        $this->set('users', $users);
     }
 
     public function view($name)
