@@ -16,8 +16,6 @@
                 echo $this->Form->control('last_name', ['label' => 'Apellidos']);
                 echo $this->Form->control('email', ['label' => 'Correo electrónico']);
                 echo $this->Form->control('password', ['label' => 'Contraseña']);
-                echo $this->Form->control('role', ['options' => ['admin' => 'Administrador', 'user' => 'Usuario']], ['label' => 'Rol']);
-                echo $this->Form->control('active', ['label' => 'Activo']);
             ?>
         </fieldset>
         <?= $this->Form->button('Crear') ?>
