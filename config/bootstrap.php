@@ -204,3 +204,5 @@ Type::build('date')->useLocaleParser();
 Type::build('datetime')->useLocaleParser();
 
 Plugin::load('DebugKit');
+
+Plugin::load('BootstrapUI');
