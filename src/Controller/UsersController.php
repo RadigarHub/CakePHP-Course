@@ -36,6 +36,10 @@ class UsersController extends AppController
                 $this->Flash->error('Los datos son inválidos, por favor inténtelo nuevamente', ['key' => 'auth']);
             }
         }
+
+        if ($this->Auth->user()) {
+            return $this->redirect(['controller' => 'Users', 'action' => 'home']);
+        }
     }
 
     public function logout()
@@ -92,7 +96,7 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success('El usuario ha sido modificado');
                 return $this->redirect(['action' => 'index']);
-                
+
             } else {
                 $this->Flash->error('El usuario no ha podido ser modificado. Por favor, inténtelo de nuevo');
             }
