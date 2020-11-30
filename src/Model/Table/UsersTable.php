@@ -61,24 +61,24 @@ class UsersTable extends Table
             ->scalar('first_name')
             ->maxLength('first_name', 100)
             ->requirePresence('first_name', 'create')
-            ->notEmptyString('first_name');
+            ->notEmptyString('first_name', 'Rellene este campo');
 
         $validator
             ->scalar('last_name')
             ->maxLength('last_name', 100)
             ->requirePresence('last_name', 'create')
-            ->notEmptyString('last_name');
+            ->notEmptyString('last_name', 'Rellene este campo');
 
         $validator
-            ->email('email')
+            ->email('email', false, 'Ingrese un correo electrónico válido')
             ->requirePresence('email', 'create')
-            ->notEmptyString('email');
+            ->notEmptyString('email', 'Rellene este campo');
 
         $validator
             ->scalar('password')
             ->maxLength('password', 255)
             ->requirePresence('password', 'create')
-            ->notEmptyString('password');
+            ->notEmptyString('password', 'Rellene este campo');
 
         $validator
             ->scalar('role')
@@ -102,7 +102,7 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['email']));
+        $rules->add($rules->isUnique(['email'], 'Ya existe un usuario con este correo electrónico'));
 
         return $rules;
     }
