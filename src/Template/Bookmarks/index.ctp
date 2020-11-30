@@ -26,6 +26,9 @@
                 <p class="list-group-item-text">
                     <?= h($bookmark->description) ?>
                 </p>
+                <br>
+                <?= $this->Html->link('Editar', ['controller' => 'bookmarks', 'action' => 'edit', $bookmark->id], ['class' => 'btn btn-sm btn-primary']) ?>
+                <?= $this->Form->postLink('Eliminar', ['controller' => 'bookmarks', 'action' => 'delete', $bookmark->id], ['class' => 'btn btn-sm btn-danger', 'confirm' => '¿Estás seguro de querer borrar este enlace?']) ?>
             </li>
             <?php endforeach ?>
         </ul>
