@@ -30,7 +30,7 @@
                             <td>
                                 <?= $this->Html->link('Ver', ['action' => 'view', $user->id], ['class' => 'btn btn-sm btn-info']) ?>
                                 <?= $this->Html->link('Editar', ['action' => 'edit', $user->id], ['class' => 'btn btn-sm btn-primary']) ?>
-                                <?= $this->Form->postLink('Eliminar', ['action' => 'delete', $user->id], ['class' => 'btn btn-sm btn-danger'], ['confirm' => '¿Estás seguro de querer eliminar al usuario este usuario?']) ?>
+                                <?= $this->Form->postLink('Eliminar', ['action' => 'delete', $user->id], ['class' => 'btn btn-sm btn-danger', 'confirm' => '¿Estás seguro de querer eliminar a este usuario?']) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>
