@@ -15,8 +15,7 @@ class CreateAdminSeedMigration extends AbstractMigration
             'last_name' => 'Diaz',
             'email' => 'rafa@rafa.com',
             'password' => function() {
-                $hasher = new DefaultPasswordHasher();
-                return $hasher->hash('secret');
+                return 'rafa';
             },
             'role' => 'admin',
             'active' => 1,
