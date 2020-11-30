@@ -78,7 +78,7 @@ class UsersTable extends Table
             ->scalar('password')
             ->maxLength('password', 255)
             ->requirePresence('password', 'create')
-            ->notEmptyString('password', 'Rellene este campo');
+            ->notEmptyString('password', 'Rellene este campo', 'create');
 
         $validator
             ->scalar('role')
@@ -114,5 +114,11 @@ class UsersTable extends Table
             ->where(['Users.active' => 1]);
 
         return $query;
+    }
+
+    public function recoverPassword($id)
+    {
+        $user = $this->get($id);
+        return $user->password;
     }
 }

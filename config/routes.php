@@ -83,6 +83,7 @@ Router::scope('/usuarios', function($routes) {
     $routes->connect('/index', ['controller' => 'Users', 'action' => 'index']);
     $routes->connect('/view/*', ['controller' => 'Users', 'action' => 'view']);
     $routes->connect('/add', ['controller' => 'Users', 'action' => 'add']);
+    $routes->connect('/edit/*', ['controller' => 'Users', 'action' => 'edit']);
 });
 // CakePHP trae un enrutador por defecto para las urls que siguen la convención url/controlador/acción/parámetros
 // Pero si se quiere especificar la ruta con otro nombre diferente al nombre del controlador o se quiere realizar alguna otra acción, se puede hacer como hemos hecho justo arriba.
